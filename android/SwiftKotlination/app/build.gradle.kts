@@ -8,8 +8,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.androidVersion)
 
+    compileSdk = 30
     defaultConfig {
         applicationId = "fr.jhandguy.swiftkotlination"
         // TODO: minSdkVersion(Versions.androidVersion)

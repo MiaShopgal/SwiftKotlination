@@ -5,7 +5,8 @@ plugins {
 dependencies {
     implementation(project(":modules:network"))
     implementation(project(":modules:image"))
-    implementation(kotlin("stdlib-jdk8", Versions.kotlinVersion))
+    implementation(kotlin("stdlib-jdk8",
+                          Versions.kotlinVersion))
 }
 
 sourceSets {
@@ -19,3 +20,9 @@ java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
+//tasks.withType<Jar> {
+//    duplicatesStrategy = DuplicatesStrategy.INHERIT
+//
+//}
+
+tasks.withType<Copy> { duplicatesStrategy = DuplicatesStrategy.EXCLUDE}

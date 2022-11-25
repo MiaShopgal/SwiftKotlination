@@ -18,7 +18,12 @@ data class Multimedia(val url: String = "", val format: Format = Format.Small) {
         object Small : Format("thumbLarge")
         object Normal : Format("Normal")
         object Medium : Format("mediumThreeByTwo210")
-        object Large : Format("superJumbo")
+
+//        object Large : Format("superJumbo")
+        object ThreeByTwoSmall : Format("threeByTwoSmallAt2X")
+        object LargeThumbnail : Format("Large Thumbnail")
+        object MediumThreeByTwo440 : Format("mediumThreeByTwo440")
+        object Large : Format("Super Jumbo")
     }
 
     @Serializer(forClass = Multimedia::class)
@@ -52,6 +57,9 @@ data class Multimedia(val url: String = "", val format: Format = Format.Small) {
                 Format.Normal.name -> Format.Normal
                 Format.Medium.name -> Format.Medium
                 Format.Large.name -> Format.Large
+                Format.ThreeByTwoSmall.name -> Format.ThreeByTwoSmall
+                Format.LargeThumbnail.name -> Format.LargeThumbnail
+                Format.MediumThreeByTwo440.name -> Format.MediumThreeByTwo440
                 else -> throw SerializationException("Unknown format $formatName")
             }
 
